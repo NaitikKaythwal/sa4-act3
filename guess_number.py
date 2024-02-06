@@ -11,12 +11,17 @@ while True:
         if guess == number:
             print("Congratulations! You guessed the right number.")
             break
+        elif guess > number:
+            cap-=1
+            if cap==0:
+                print(f"Sorry, You ran out of guesses! Better luck next time")
+                break
+            print(f"Sorry, Your number is too high. You have {cap} guesses left. Try again.")
         else:
             cap-=1
             if cap==0:
                 print(f"Sorry, You ran out of guesses! Better luck next time")
                 break
-            print(f"Sorry, that's not the correct number. You have {cap} guesses left. Try again.")
-            
+            print(f"Sorry, Your number is too low. You have {cap} guesses left. Try again.")
     except ValueError:
         print("Please enter a valid number or 'q' to quit.")
